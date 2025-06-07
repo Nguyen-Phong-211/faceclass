@@ -1,46 +1,49 @@
 # To create apps in Django
 
-python manage.py startapp accounts
-python manage.py startapp students
-python manage.py startapp lecturers
-python manage.py startapp subjects
-python manage.py startapp classes
-python manage.py startapp attendance
-python manage.py startapp leaves
-python manage.py startapp notifications
-python manage.py startapp audit
-python manage.py startapp rooms
+1. `python manage.py startapp accounts`
+2. `python manage.py startapp students`
+3. `python manage.py startapp lecturers`
+4. `python manage.py startapp subjects`
+5. `python manage.py startapp classes`
+6. `python manage.py startapp attendance`
+7. `python manage.py startapp leaves`
+8. `python manage.py startapp notifications`
+9. `python manage.py startapp audit`
+10. `python manage.py startapp rooms`
 
 # To migrate all app
-python manage.py makemigrations accounts
-python manage.py makemigrations subjects
-python manage.py makemigrations students
-python manage.py makemigrations lecturers
-python manage.py makemigrations classes
-python manage.py makemigrations rooms
-python manage.py makemigrations attendance
-python manage.py makemigrations audit
-python manage.py makemigrations leaves
-python manage.py makemigrations notifications
 
-Then 
+1. `python manage.py makemigrations accounts`
+2. `python manage.py makemigrations subjects`
+3. `python manage.py makemigrations students`
+4. `python manage.py makemigrations lecturers`
+5. `python manage.py makemigrations classes`
+6. `python manage.py makemigrations rooms`
+7. `python manage.py makemigrations attendance`
+8. `python manage.py makemigrations audit`
+9. `python manage.py makemigrations leaves`
+10. `python manage.py makemigrations notifications`
 
-python manage.py migrate accounts
-python manage.py migrate subjects
-python manage.py migrate students
-python manage.py migrate lecturers
-python manage.py migrate classes
-python manage.py migrate rooms
-python manage.py migrate attendance
-python manage.py migrate audit
-python manage.py migrate leaves
-python manage.py migrate notifications
+
+## Then 
+
+1. `python manage.py migrate accounts`
+2. `python manage.py migrate subjects`
+3. `python manage.py migrate students`
+4. `python manage.py migrate lecturers`
+5. `python manage.py migrate classes`
+6. `python manage.py migrate rooms`
+7. `python manage.py migrate attendance`
+8. `python manage.py migrate audit`
+9. `python manage.py migrate leaves`
+10. `python manage.py migrate notifications`
 
 # To seed data like laravel, you can create folders: [your_name_apps]/management/commands/[your_name_file]
 # Then you can run the command in the terminal like this: python manage.py [your_name_file]
 # Beside, you must create files in management/__init__.py and commands/__init__.py
-python manage.py seed_role
-python manage.py seed_academic_year
-python manage.py seed_department 
-python manage.py seed_major 
-python manage.py seed_semester
+
+1. `python manage.py seed_role`
+2. `python manage.py seed_academic_year`
+3. `python manage.py seed_department`
+4. `python manage.py seed_major`
+5. `python manage.py seed_semester`
