@@ -7,7 +7,7 @@ from subjects.models import Subject
 class Lecturer(models.Model):
     lecturer_id = models.BigAutoField(primary_key=True)
     fullname = models.CharField(max_length=255)
-    account = models.ForeignKey(Account, on_delete=models.CASCADE)
+    account = models.OneToOneField(Account, on_delete=models.CASCADE)
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
     gender = models.CharField(max_length=1)
     dob = models.DateField()

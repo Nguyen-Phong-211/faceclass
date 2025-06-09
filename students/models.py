@@ -49,7 +49,7 @@ class Student(models.Model):
     department = models.ForeignKey('students.Department', on_delete=models.CASCADE)
     profile_attachments = models.TextField(null=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    account = models.ForeignKey(Account, on_delete=models.CASCADE)
+    account = models.OneToOneField(Account, on_delete=models.CASCADE)
     gender = models.CharField(max_length=1)
     dob = models.DateField()
     status = models.CharField(max_length=1)

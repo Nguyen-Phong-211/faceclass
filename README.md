@@ -41,9 +41,3 @@
 # To seed data like laravel, you can create folders: [your_name_apps]/management/commands/[your_name_file]
 # Then you can run the command in the terminal like this: python manage.py [your_name_file]
 # Beside, you must create files in management/__init__.py and commands/__init__.py
-
-1. `python manage.py seed_role`
-2. `python manage.py seed_academic_year`
-3. `python manage.py seed_department`
-4. `python manage.py seed_major`
-5. `python manage.py seed_semester`

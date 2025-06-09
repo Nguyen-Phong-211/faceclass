@@ -12,3 +12,5 @@ class CreateStudentView(APIView):
             serializer.save()
             return Response({'detail': 'Sinh viên tạo thành công'}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    

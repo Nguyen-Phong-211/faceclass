@@ -72,10 +72,11 @@ ROOT_URLCONF = 'faceclass.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'faceclass', 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates', 'faceclass/templates/react', 'faceclass', 'react')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -87,7 +88,7 @@ TEMPLATES = [
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'faceclass', 'static'),
+    os.path.join(BASE_DIR, 'faceclass/templates/react/static'),
 ]
 
 WSGI_APPLICATION = 'faceclass.wsgi.application'
@@ -156,12 +157,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = ''  
-EMAIL_HOST_PASSWORD = ''   
+EMAIL_HOST_USER = '[your email]'  
+EMAIL_HOST_PASSWORD = '[your password]'   
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
@@ -169,7 +170,7 @@ CORS_ALLOWED_ORIGINS = [
 
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=180),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'USER_ID_FIELD': 'account_id',
 
@@ -187,3 +188,9 @@ REST_FRAMEWORK = {
 
 AUTH_USER_MODEL = 'accounts.Account'
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': 'tmp/django_cache',
+    }
+}

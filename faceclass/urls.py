@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from faceclass.views import ReactAppView
+from .views import ReactAppView
 from django.urls import path, re_path, include
 from django.conf.urls import include
 from django.conf import settings
@@ -24,9 +24,13 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/student/', include('accounts.urls')),
+    path('api/accounts/', include('accounts.urls')),
+    path('api/admin/', include('admin_panel.urls')),
     path('api/', include('faceclass.api_urls')),  
     path('', include('classes.urls')),
     path('', include('students.urls')),
-    re_path(r'^(?!api/).*$', ReactAppView.as_view()),
+    re_path(r'^(?!api/).*$', ReactAppView.as_view(), name="react_app"),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

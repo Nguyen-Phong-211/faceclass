@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from students.models import Department
 from students.serializers import DepartmentSerializer
 from .models import Class
+from students.models import Major
 from .serializers import ClassSerializer
 
 @api_view(['GET'])
@@ -13,7 +14,7 @@ def get_departments(request):
     return Response(serializer.data)
 
 @api_view(['GET'])
-def get_classes_by_department(request, department_id):
-    classes = Class.objects.filter(department_id=department_id)
-    serializer = ClassSerializer(classes, many=True)
+def get_major_by_department(request, department_id):
+    majors = Major.objects.filter(department_id=department_id)
+    serializer = ClassSerializer(majors, many=True)
     return Response(serializer.data)

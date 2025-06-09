@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from .models import Class
+from students.models import Major
 
 class ClassSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Class
-        fields = ['class_id', 'class_name', 'department']
+        model = Major
+        fields = ['major_id', 'major_name', 'department']
